@@ -15,6 +15,8 @@ import okhttp3.Response;
  */
 class VimeoAPIManager {
 
+       // The singleton HTTP client.
+   public final OkHttpClient client = new OkHttpClient();
     //Base URL for Vimeo videos
     protected static final String VIMEO_URL = "https://vimeo.com/%s";
     //Config URL containing video information
@@ -35,8 +37,7 @@ class VimeoAPIManager {
             //If no referrer exists, generate from base URL
             referrer = String.format(VIMEO_URL, identifier);
         }
-
-            OkHttpClient client = new OkHttpClient();
+        
             Request request = new Request.Builder()
                     .url(url)
                     .header("Content-Type", "application/json")
