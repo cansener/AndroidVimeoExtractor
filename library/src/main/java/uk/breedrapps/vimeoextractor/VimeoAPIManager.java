@@ -13,7 +13,7 @@ import okhttp3.Response;
 /**
  * An API and request manager for Vimeo's web service.
  */
-class VimeoAPIManager {
+public class VimeoAPIManager {
 
        // The singleton HTTP client.
    public static OkHttpClient client = new OkHttpClient();
