@@ -41,7 +41,7 @@ class VimeoAPIManager {
             Request request = new Request.Builder()
                     .url(url)
                     .header("Content-Type", "application/json")
-                    .header("Referer", referrer)
+                    .header("Referer", referrer).tag(identifier).
                     .build();
 
             return client.newCall(request);
